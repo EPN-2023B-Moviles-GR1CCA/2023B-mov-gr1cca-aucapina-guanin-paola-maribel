@@ -1,9 +1,9 @@
-import java.util.Date
+import java.util.*
 
 fun main() {
     println("Hola mundo")
     //Inmutables (NO se reasignan "=")
-    val inmutable: String ="Paola";
+    val inmutable:String ="Paola";
     //inmutable="Paola";
 
     //Mutables (Re asignar)
@@ -23,6 +23,23 @@ fun main() {
     val estadoCivil: Char='C'
     val mayorEdad: Boolean=true
 
-    
+    //Clases Java
+    val fechaNacimiento: Date=Date()
+
+    //Switch
+    val estadoCivilWhen ="C"
+    when(estadoCivilWhen){
+        ("C")->{
+            println("Casado")
+        }
+        "S"->{
+            println("Soltero")
+        }
+        else->{
+            println("No sabemos")
+        }
+    }
+    val coqueteo=if (estadoCivilWhen=="S") "Si" else "No"
+
 
 }
