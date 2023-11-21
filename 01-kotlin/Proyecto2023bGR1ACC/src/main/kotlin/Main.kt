@@ -41,6 +41,20 @@ fun main() {
     }
     val coqueteo=if (estadoCivilWhen=="S") "Si" else "No"
 
+    calcularSueldo(10.00)
+    calcularSueldo(10.00, 15.00)
+    calcularSueldo(10.00, 12.00, 20.00)
+
+    //  Parametros nombrados
+    calcularSueldo(sueldo = 10.00)
+    calcularSueldo(sueldo = 10.00, tasa = 15.00)
+    calcularSueldo(sueldo = 10.00, tasa = 12.00, bonoEspecial = 20.00)
+
+    calcularSueldo(sueldo = 10.00, bonoEspecial = 20.00) //Named parameters
+    calcularSueldo(10.00, bonoEspecial = 20.00) //Named parameters
+
+    calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00) //Named parameters(se puede poner en cualquier orden siempre que se nombren)
+
 
 }
 
