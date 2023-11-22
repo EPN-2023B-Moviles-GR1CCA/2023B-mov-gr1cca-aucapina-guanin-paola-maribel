@@ -92,6 +92,40 @@ abstract class Numeros( //Constructor PRIMARIO
 }
 
 
+class Suma( //constructor primario suma
+    uno: Int, //parametro
+    dos: Int //parametro
+): Numeros(uno, dos) { //<- Constructor del Padre
+    init { //bloque constructor primario
+        this.numeroUno; numeroUno;
+        this.numeroDos; numeroDos;
+    }
+
+    constructor(//constructor secundario
+        uno: Int?, //parametros
+        dos: Int //parametros
+    ) : this(  //llamada constructor primario
+        if (uno == null) 0 else uno,
+        dos
+    ) { // si necesitamos bloque de codigo lo usamos
+        numeroUno;
+    }
+
+    constructor(//tercer constructor
+        uno: Int, //parametros
+        dos: Int? //parametros
+    ) : this(  //llamada constructor primario
+        uno,
+        if (dos == null) 0 else uno
+    )
+    //Si no lo necesitamos al bloque de codigo "{}" lo omitimos
+}
+
+
+
+
+
+
 
 //void->Unit
 fun imprimirNombre(nombre: String): Unit{
