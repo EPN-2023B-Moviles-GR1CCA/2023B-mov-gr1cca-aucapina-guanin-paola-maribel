@@ -1,4 +1,5 @@
 import java.util.*
+import kotlin.collections.ArrayList
 
 fun main() {
     println("Hola mundo")
@@ -63,6 +64,55 @@ fun main() {
     val sumaUno = Suma(1,1)
     val sumaDos = Suma(null, 1)
     val sumaTres = Suma(1, null)
+
+    val sumaCuatro = Suma(null,null)
+
+    sumaUno.sumar()
+    sumaDos.sumar()
+    sumaTres.sumar()
+    sumaCuatro.sumar()
+
+    println(Suma.pi)
+    println(Suma.elevarAlCuadrado(2))
+    println(Suma.historialSumas)
+
+    //Arreglos
+
+    //Tipos de arreglos
+
+    //Arreglo estático
+    val arregLoEstático: Array<Int> = arrayOf<Int>(1,2,3)
+    println(arregLoEstático)
+
+
+    //Arreglo dinámico
+    val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(
+        1,2,3,4,5,6,7,8,9,10
+    )
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
+
+
+    //For each->Unit
+    //Iterar arreglo
+    val respuestaForEach: Unit=arregloDinamico
+        .forEach{valorActual:Int->
+            println("valor actual: ${valorActual}")
+        }
+    //it (eso) significa el elemento iterativo
+    arregloDinamico.forEach({ println(it) })
+
+    arregLoEstático
+        .forEachIndexed{indice: Int,valorActual:Int->
+            println("Valor ${valorActual} Indice: ${indice}")
+        }
+    println(respuestaForEach)
+
+
+
+
 
 }
 
