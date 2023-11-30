@@ -11,6 +11,7 @@ fun main() {
     mutable="Paola";
 
     //val > var
+
     //Duck Typing
     var ejemploVariable="Paola Aucapiña"
     val edadEjemplo: Int=12
@@ -39,6 +40,8 @@ fun main() {
             println("No sabemos")
         }
     }
+
+    //If-else
     val coqueteo=if (estadoCivilWhen=="S") "Si" else "No"
 
     calcularSueldo(10.00)
@@ -75,6 +78,7 @@ abstract class NumerosJava{
         println("Inicializando")
     }
 }
+
 
 abstract class Numeros( //Constructor PRIMARIO
     // Ejemplo:
@@ -124,6 +128,35 @@ class Suma( //constructor primario suma
         if (dos == null) 0 else uno
     )
     //Si no lo necesitamos al bloque de codigo "{}" lo omitimos
+
+    constructor(//  cuarto constructor
+        uno: Int?, // parametros
+        dos: Int? // parametros
+    ) : this(  // llamada constructor primario
+        if (uno == null) 0 else uno,
+        if (dos == null) 0 else uno
+    )
+
+    //funciones publicas o privadas
+
+    public fun sumar():Int{ // public por defecto, o usar private
+        val total=numeroUno+numeroDos
+        agregarHistorial(total)
+        return total
+    }
+
+    companion object{//atributos y metodos compartidos
+        //entre las instancias
+        val pi=3.14
+        fun elevarAlCuadrado(num: Int):Int{
+            return num*num
+        }
+        val historialSumas= arrayListOf<Int>()
+        fun agregarHistorial(valorNuevaSuma:Int){
+            historialSumas.add(valorNuevaSuma)
+        }
+
+    }
 }
 
 //void->Unit
@@ -147,5 +180,4 @@ fun calcularSueldo(
         bonoEspecial.dec()
     return sueldo*(100/tasa)+bonoEspecial
     }
-
 }
