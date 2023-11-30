@@ -110,8 +110,32 @@ fun main() {
         }
     println(respuestaForEach)
 
+    //MAP-> muta el arreglo(cambia el arreglo)
+    //1.enviamos el nuevo valor de la iteracion
+    //2.devuelve un NUEVO ARREGLO con valores
+    //modificados
 
+    val respuestaMap: List<Double> = arregloDinamico
+        .map { valorActual:Int->
+            return@map valorActual.toDouble()+100.00
+        }
+    println(respuestaMap)
+    val respuestaMapDos=arregloDinamico.map { it+15 }
 
+    //Filter->filtrar arreglo
+    //1.devuelve una expresion (true o false)
+    //2.nuevo arreglo filtrado
+    val respuestaFilter: List<Int> = arregloDinamico
+        .filter { valorActual: Int->
+            //expresion condicion
+            val mayoresAcinco: Boolean=valorActual>5
+            return@filter mayoresAcinco
+        }
+
+    val respuestaFilterDos=arregloDinamico.filter { it<=5 }
+
+    println(respuestaFilter)
+    println(respuestaFilterDos)
 
 
 }
