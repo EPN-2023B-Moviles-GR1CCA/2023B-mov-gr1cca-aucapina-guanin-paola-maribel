@@ -171,7 +171,7 @@ fun main() {
         }
     println(respuestaReduce)//78
 
-}
+} 
 
 abstract class NumerosJava{
     protected val numeroUno: Int
