@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ProyectoInicial</string>
-    <string name="texto_saludo">Hola</string>
+    <string name="texto_saludo">Buenas Noches</string>
     <color name="texto_color"> #FFFFFFFF</color>
     <color name="back_color"> #759C27B0 </color>
 </resources>

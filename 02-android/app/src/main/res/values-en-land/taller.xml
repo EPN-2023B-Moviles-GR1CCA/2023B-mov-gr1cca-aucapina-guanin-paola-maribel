@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InitialProject</string>
+    <string name="texto_saludo">Good Night</string>
+    <color name="texto_color"> 	#008080</color>
+    <color name="back_color"> #FFFF00 </color>
+</resources>
