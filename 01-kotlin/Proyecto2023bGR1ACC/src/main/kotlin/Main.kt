@@ -170,7 +170,7 @@ fun main() {
             return@reduce(acumulado+valorActual)//->logica negocio
         }
     println(respuestaReduce)//78
-
+    
 } 
 
 abstract class NumerosJava{
