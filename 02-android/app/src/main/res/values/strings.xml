@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ProyectoInicial</string>
     <string name="texto_saludo">Hola</string>
-    <color name="texto_color"> #FFFFFFFF</color>
-    <color name="back_color"> #759C27B0 </color>
+    <color name="texto_color">#FFFFFFFF</color>
+    <color name="back_color">#759C27B0</color>
 </resources>
