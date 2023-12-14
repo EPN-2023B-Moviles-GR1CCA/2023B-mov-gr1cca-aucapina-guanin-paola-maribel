@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="texto_saludo">Hello</string>
-    <color name="texto_color"> #800000 </color>
-    <color name="back_color"> #00FF00 </color>
+    <color name="texto_color"> #7188EE </color>
+    <color name="back_color"> #83EE3E </color>
 </resources>

@@ -47,7 +47,7 @@ class ACicloVida : AppCompatActivity() {
     }
 
     override fun onStop() {
-        super .onStop())
+        super .onStop()
         mostrarSnackbar( "onStop")
     }
 
