@@ -8,11 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
         val botonCicloVida=findViewById<Button>(R.id.btn_ciclo_vida)
         botonCicloVida
             .setOnClickListener{
                 irActividad(ACicloVida::class.java)
             }
+
+        val botonListView=findViewById<Button>(R.id.btn_ir_list_view)
+
+        botonListView.setOnClickListener{
+            irActividad(BListView::class.java)
+        }
 
 
     }
@@ -23,4 +30,6 @@ class MainActivity : AppCompatActivity() {
         val intent=Intent(this,clase)
        startActivity(intent)
     }
+
+
 }
