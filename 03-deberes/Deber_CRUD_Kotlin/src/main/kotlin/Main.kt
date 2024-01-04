@@ -579,7 +579,7 @@ fun main() {
             3 -> {
                 while (true){
                     println("1. Exportar paises a archivo CSV")
-                    println("2. Exportar paises a archivo CSV")
+                    println("2. Exportar ciudades a archivo CSV")
                     when (readLine()?.toIntOrNull()) {
                         1 -> {
                             // Exportar países a CSV
