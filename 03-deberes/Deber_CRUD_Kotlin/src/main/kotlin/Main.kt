@@ -141,7 +141,7 @@ class VerificarPais {
         println("Pais eliminado.")
     }
 
-    // Add these functions to the VerificarPais class
+
     fun exportPaisesToCSV(filename: String) {
         val paises = readAll()
         val file = File(filename)
@@ -149,7 +149,8 @@ class VerificarPais {
             FileWriter(file).use { writer ->
                 writer.append("CodigoISO,NombrePais,PibPerCápitaPais,MiembroONU,SimboloDinero\n")
                 paises.forEach { pais ->
-                    writer.append("${pais.codigoISO},${pais.nombrePais},${pais.pibPais},${pais.miembroONU},${pais.simboloDinero}\n")
+                    writer.append("${pais.codigoISO},${pais.nombrePais},${pais.pibPais},${pais.miembroONU}," +
+                            "${pais.simboloDinero}\n")
                 }
             }
             println("Datos de países exportados correctamente a $filename")
@@ -275,7 +276,7 @@ class verificarCiudad {
         }
         println("Ciudad eliminada.")
     }
-    // Add these functions to the verificarCiudad class
+
     fun exportCiudadesToCSV(filename: String) {
         val ciudades = readAll()
         val file = File(filename)
@@ -283,7 +284,8 @@ class verificarCiudad {
             FileWriter(file).use { writer ->
                 writer.append("CodigoCiudad,NombreCiudad,EsCapital,Superficie,NivelSeguridad,CodigoISOPais\n")
                 ciudades.forEach { ciudad ->
-                    writer.append("${ciudad.codigoCiudad},${ciudad.nombreCiudad},${ciudad.esCapital},${ciudad.superficie},${ciudad.seguridad},${ciudad.codigoISOPais}\n")
+                    writer.append("${ciudad.codigoCiudad},${ciudad.nombreCiudad},${ciudad.esCapital},${ciudad.superficie}," +
+                            "${ciudad.seguridad},${ciudad.codigoISOPais}\n")
                 }
             }
             println("Datos de ciudades exportados correctamente a $filename")
