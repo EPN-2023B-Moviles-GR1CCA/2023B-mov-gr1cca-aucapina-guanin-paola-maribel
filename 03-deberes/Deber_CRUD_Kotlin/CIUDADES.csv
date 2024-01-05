@@ -1,0 +1,9 @@
+CodigoCiudad,NombreCiudad,EsCapital,Superficie,NivelSeguridad,CodigoISOPais
+2181,Quito,true,324.0,M,218
+2182,Guayaquil,false,350.0,B,218
+2183,Ambato,false,600.0,M,218
+3921,Tokio,true,2194.0,M,392
+3922,Osaka,false,223.0,M,392
+6431,Moscú,true,2511.8,M,643
+8261,Londres,true,1572.0,M,826
+8262,Mánchester,false,115.6,M,826
