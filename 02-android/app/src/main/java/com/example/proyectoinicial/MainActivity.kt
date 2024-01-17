@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        //Funcionalidad botones
         val botonCicloVida=findViewById<Button>(R.id.btn_ciclo_vida)
         botonCicloVida
             .setOnClickListener{
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         botonListView.setOnClickListener{
             irActividad(BListView::class.java)
         }
+
+
         val botonIntentImplicito = findViewById<Button>(
             R.id.btn_ir_intent_implicito)
         botonIntentImplicito
