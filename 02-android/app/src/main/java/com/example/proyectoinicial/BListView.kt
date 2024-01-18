@@ -98,7 +98,26 @@ class BListView : AppCompatActivity() {
             "Cancelar",
             null
         )
-        
+        val opciones = resources.getStringArray(
+            R.array.string_array_opciones_dialogo
+        )
+        val seleccionPrevia = booleanArrayOf(
+            true, // Lunes seleccionado
+            false, // Martes NO seleccionado
+            false // Miercoles NO seleccionado
+        )
+        builder.setMultiChoiceItems(
+            opciones,
+            seleccionPrevia,
+            { dialog,
+              which,
+              isChecked ->
+                mostrarSnackbar("Dio clic en el item ${which}")
+            }
+        )
+        val dialogo = builder.create()
+        dialogo.show()
+
     }
 
 
