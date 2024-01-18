@@ -2,9 +2,13 @@ package com.example.proyectoinicial
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import com.google.android.material.snackbar.Snackbar
 
 class BListView : AppCompatActivity() {
     val arreglo = BBaseDatosMemoria.arregloBEntrenador
@@ -28,6 +32,7 @@ class BListView : AppCompatActivity() {
             .setOnClickListener {
                 anadirEntrenador(adaptador)
             }
+        registerForContextMenu(listView)
 
     }// fin onCreate
     fun anadirEntrenador( adaptador: ArrayAdapter<BEntrenador>){
@@ -35,6 +40,46 @@ class BListView : AppCompatActivity() {
             BEntrenador(1,"Paola","Descripcion")
         )
         adaptador.notifyDataSetChanged()
+    }
+
+    var posicionItemSeleccionado = 0
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        // Llenamos las opciones del menu
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        // Obtener el id del ArrayListSeleccionado
+        val info = menuInfo as AdapterView.AdapterContextMenuInfo
+        val posicion = info.position
+        posicionItemSeleccionado = posicion
+    }
+    //Snackbar
+    fun mostrarSnackbar(texto:String){
+        Snackbar
+            .make(
+                findViewById(R.id.lv_list_view), // view
+                texto, // texto
+                Snackbar.LENGTH_LONG // tiempo
+            )
+            .show()
+    }
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.mi_editar ->{
+                mostrarSnackbar("${posicionItemSeleccionado}")
+                return true
+            }
+            R.id.mi_eliminar ->{
+                mostrarSnackbar("${posicionItemSeleccionado}")
+                abrirDialogo()
+                return true
+            }
+            else -> super.onContextItemSelected(item)
+        }
     }
 
 }
