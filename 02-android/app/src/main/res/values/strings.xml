@@ -5,4 +5,12 @@
     <string name="c_vida">C. Vida</string>
     <color name="texto_color">#FFFFFFFF</color>
     <color name="back_color">#759C27B0</color>
+    <string name="title_activity_google_maps_inicio">GoogleMapsInicio</string>
+
+    <string-array name="string_array_opciones_dialogo">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>
+
 </resources>
