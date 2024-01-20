@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.examenib.model.Pais
 
-class Pais (
+class PaisDB (
     contexto: Context?, //this
 ): SQLiteOpenHelper(
     contexto,
