@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "916322933365",
+    "project_id": "b2023-gr1acc-pmag",
+    "storage_bucket": "b2023-gr1acc-pmag.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916322933365:android:8e9baf85a3715a7779363c",
+        "android_client_info": {
+          "package_name": "com.example.proyectoinicial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7zNAFHZVBgvdqtI-goQGhO-LKE5mwO9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

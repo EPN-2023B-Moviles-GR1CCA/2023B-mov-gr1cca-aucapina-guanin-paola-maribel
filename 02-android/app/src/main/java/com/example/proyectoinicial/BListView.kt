@@ -17,6 +17,7 @@ class BListView : AppCompatActivity() {
     val arreglo = BBaseDatosMemoria.arregloBEntrenador
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_blist_view)
 
         val listView = findViewById<ListView>(R.id.lv_list_view)

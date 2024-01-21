@@ -6,4 +6,145 @@
     android:layout_height="match_parent"
     tools:context=".Pais_Editar">
 
+    <Button
+        android:id="@+id/btnEditarPais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
+    <TextView
+        android:id="@+id/txtMiembroONU2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="Es miembro de la ONU: "
+        app:layout_constraintEnd_toEndOf="@+id/txtSimDinero2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtSimDinero2"
+        app:layout_constraintTop_toBottomOf="@+id/txtSimDinero2" />
+
+    <Spinner
+        android:id="@+id/spMiembroONUEditar"
+        android:layout_width="171dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMiembroONU2"
+        app:layout_constraintStart_toEndOf="@+id/txtMiembroONU2"
+        app:layout_constraintTop_toTopOf="@+id/txtMiembroONU2"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <TextView
+        android:id="@+id/txtSimDinero2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Simbolo de la moneda local: "
+        app:layout_constraintEnd_toEndOf="@+id/txtPibPais2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtPibPais2"
+        app:layout_constraintTop_toBottomOf="@+id/txtPibPais2" />
+
+    <EditText
+        android:id="@+id/etxSimDineroEditar"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ejm: $"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSimDinero2"
+        app:layout_constraintStart_toEndOf="@+id/txtSimDinero2"
+        app:layout_constraintTop_toTopOf="@+id/txtSimDinero2"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <EditText
+        android:id="@+id/etxPibPaisEditar"
+        android:layout_width="239dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:ems="10"
+        android:hint="Ejm. 124.00"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPibPais2"
+        app:layout_constraintStart_toEndOf="@+id/txtPibPais2"
+        app:layout_constraintTop_toTopOf="@+id/txtPibPais2"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/txtPibPais2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="PIB Nominal:"
+        app:layout_constraintEnd_toEndOf="@+id/txtNombrePais2"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toStartOf="@+id/txtNombrePais"
+        app:layout_constraintTop_toTopOf="@+id/txtNombrePais2" />
+
+    <TextView
+        android:id="@+id/txtNombrePais2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Nombre:"
+        app:layout_constraintEnd_toEndOf="@+id/txtCodIso2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtCodIso2"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodIso2" />
+
+    <EditText
+        android:id="@+id/etxNombrePaisEditar"
+        android:layout_width="262dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="36dp"
+        android:ems="10"
+        android:hint="Ejm. Corea del Sur"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNombrePais2"
+        app:layout_constraintStart_toEndOf="@+id/txtNombrePais2"
+        app:layout_constraintTop_toTopOf="@+id/txtNombrePais2"
+        app:layout_constraintVertical_bias="0.537" />
+
+    <EditText
+        android:id="@+id/etxCodIsoEditar"
+        android:layout_width="157dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="76dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="112"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCodIso2"
+        app:layout_constraintStart_toEndOf="@+id/txtCodIso2"
+        app:layout_constraintTop_toTopOf="@+id/txtCodIso2"
+        app:layout_constraintVertical_bias="0.588" />
+
+    <TextView
+        android:id="@+id/txtCodIso2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Código ISO:"
+        app:layout_constraintEnd_toEndOf="@+id/txtDatos2"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="@+id/txtDatos2"
+        app:layout_constraintTop_toBottomOf="@+id/txtDatos2" />
+
+    <TextView
+        android:id="@+id/txtDatos2"
+        android:layout_width="164dp"
+        android:layout_height="27dp"
+        android:text="Ingresa los datos del pais: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
 </androidx.constraintlayout.widget.ConstraintLayout>
