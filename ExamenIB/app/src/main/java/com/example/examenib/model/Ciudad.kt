@@ -8,7 +8,12 @@ class Ciudad (var codigoCiudad: Int,
               var codigoISOPais: Int
 ) {
     override fun toString(): String {
-        return "Código Ciudad=$codigoCiudad, nombre='$nombreCiudad', esCapital=$esCapital, superficie=$superficie, seguridad=$seguridad, codigoISOPais=$codigoISOPais)"
+        return "Ciudad: $nombreCiudad\n" +
+                "Código: $codigoCiudad\n" +
+                "Es Capital: $esCapital\n" +
+                "Superficie: $superficie\n" +
+                "Nivel de Seguridad: $seguridad\n" +
+                "Código ISO del País: $codigoISOPais"
     }
 
     fun verificarEsCapital(esCapital: Boolean): String{
