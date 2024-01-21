@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.examenib.model.Pais
 
-class PaisDB (
+class PaisDB  (
     contexto: Context?, //this
 ): SQLiteOpenHelper(
     contexto,
@@ -73,14 +73,14 @@ class PaisDB (
                 val nombrePais = resultSet.getString(1)
                 val pibPais = resultSet.getDouble(2)
                 val simboloDinero = resultSet.getString(3)
-                val miembroONU = resultSet.equals(1)
+                val miembroONU = resultSet.getString(4)
 
                 if (codigoISO != null) {
                     val paisEncontrado = Pais(112, "Ecuador", 0.0, '$', true)
                     paisEncontrado.codigoISO = codigoISO
                     paisEncontrado.nombrePais = nombrePais
                     paisEncontrado.pibPais = pibPais
-                    paisEncontrado.simboloDinero = simboloDinero[1]
+                    paisEncontrado.simboloDinero = simboloDinero[0]
                     paisEncontrado.miembroONU = miembroONU.equals("1")
 
                     paises.add(paisEncontrado)
@@ -115,13 +115,13 @@ class PaisDB (
                 val nombrePais = resultSet.getString(1)
                 val pibPais = resultSet.getDouble(2)
                 val simboloDinero = resultSet.getString(3)
-                val miembroONU = resultSet.equals(1)
+                val miembroONU = resultSet.getString(4)
 
                 if(codigoISO!= null){
                     paisEncontrado.codigoISO = codigoISO
                     paisEncontrado.nombrePais = nombrePais
                     paisEncontrado.pibPais = pibPais
-                    paisEncontrado.simboloDinero = simboloDinero[1]
+                    paisEncontrado.simboloDinero = simboloDinero[0]
                     paisEncontrado.miembroONU = miembroONU.equals("1")
                 }
             } while (resultSet.moveToNext())
@@ -155,24 +155,26 @@ class PaisDB (
             )
         conexionEscritura.close()
         return if (resultadoActualizcion == -1) false else true
-    }
+    }*/
 
-    fun eliminarCocineroPorCodigoUnico(codigoUnico: String): Boolean{
+    fun deleteISO(codigoISO: Int): Boolean{
         val conexionEscritura = writableDatabase
 
-        val parametrosConsultaDelete = arrayOf( codigoUnico)
+        val parametrosConsultaDelete = arrayOf(codigoISO.toString())
 
         val resultadoEliminacion = conexionEscritura
             .delete(
-                "COCINERO", //tabla
-                "codigoUnico = ?",
+                "paises", //tabla
+                "codigoISO = ?",
                 parametrosConsultaDelete
             )
 
         conexionEscritura.close()
         return if(resultadoEliminacion == -1) false else true
     }
-*/
+
 
 
 }
+
+

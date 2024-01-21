@@ -1,5 +1,6 @@
 package com.example.examenib
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import com.example.examenib.model.Pais
 import com.google.android.material.snackbar.Snackbar
 
 class Pais_Crear : AppCompatActivity() {
@@ -38,37 +40,28 @@ class Pais_Crear : AppCompatActivity() {
                     val simboloDinero = findViewById<EditText>(R.id.etxSimDinero)
                     val miembroONU = spinnerPaisONU.selectedItem.toString()
 
+                    val miembro = miembroONU.equals("Si")
 
-                    // Limpiar errores anteriores
-                    /*codigoUnico.error = null
-                    nombre.error = null
-                    apellido.error = null
-                    edad.error = null
-                    fechaContratacion.error = null
-                    salario.error = null
+                    val paisNuevo = Pais(
+                        codigoISO.text.toString().toInt(),
+                        nombrePais.text.toString(),
+                        pibPais.text.toString().toDouble(),
+                        (simboloDinero.text.toString())[0],
+                        miembro
+                    )
 
-                    if(validarCampos(codigoUnico, nombre, apellido, edad, fechaContratacion, salario, isMainChef)){*/
-                       /* val esPrincipal = isMainChef.equals("Si")
+                    val respuesta = db
+                        .paisApp!!.crearPais(paisNuevo)
 
-                        val newChef = Cocinero(
-                            codigoUnico.text.toString(),
-                            nombre.text.toString(),
-                            apellido.text.toString(),
-                            edad.text.toString().toInt(),
-                            fechaContratacion.text.toString(),
-                            salario.text.toString().toDouble(),
-                            esPrincipal
-                        )
-
-                        val respuesta = db
-                            .tablaCocinero!!.crearCocinero(newChef)
-
-                        if(respuesta) {
-                            mostrarSnackbar("El cocinero se ha creado exitosamente")
-                        }else{
-                            mostrarSnackbar("Hubo un problema en la creacion del cocinero")
-                        }
-                 //   }*/
+                    if(respuesta) {
+                        val data = Intent()
+                        data.putExtra("mensaje", "Se creo")
+                        setResult(RESULT_OK, data)
+                        finish()
+                    }else{
+                        mostrarSnackbar("No se creo")
+                    }
+                    //   }*/
 
                 } catch (e: Exception) {
                     Log.e("Error", "Error en la aplicación", e)
@@ -84,9 +77,4 @@ class Pais_Crear : AppCompatActivity() {
             )
             .show()
     }
-
-
-
-
-
 }
