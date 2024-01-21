@@ -67,5 +67,59 @@ class ESqliteHelperEntrenador(
         return if(resultadoEliminacion == -1) false else true
     }
 
+    fun actualizarEntrenadorFormulario(
+        nombre: String,
+        descripcion: String,
+        id:Int,
+    ):Boolean{
+        val conexionEscritura = writableDatabase
+        val valoresAActualizar = ContentValues()
+        valoresAActualizar.put("nombre", nombre)
+        valoresAActualizar.put("descripcion", descripcion)
+        // where ID = ?
+        val parametrosConsultaActualizar = arrayOf( id.toString() )
+        val resultadoActualizacion = conexionEscritura
+            .update(
+                "ENTRENADOR", // Nombre tabla
+                valoresAActualizar, // Valores
+                "id=?", // Consulta Where
+                parametrosConsultaActualizar
+            )
+        conexionEscritura.close()
+        return if(resultadoActualizacion == -1) false else true
+    }
+
+    fun consultarEntrenadorPorID(id: Int): BEntrenador{
+        val baseDatosLectura = readableDatabase
+        val scriptConsultaLectura = """
+            SELECT * FROM ENTRENADOR WHERE ID = ?
+        """.trimIndent()
+        val parametrosConsultaLectura = arrayOf(id.toString())
+        val resultadoConsultaLectura = baseDatosLectura.rawQuery(
+            scriptConsultaLectura, // Consulta
+            parametrosConsultaLectura, // Parametros
+        )
+        val existeUsuario = resultadoConsultaLectura.moveToFirst()
+        val usuarioEncontrado = BEntrenador(0, "" , "")
+        // val arreglo = arrayListOf<BEntrenador>()
+        if(existeUsuario){
+            do{
+                val id= resultadoConsultaLectura.getInt(0) // Indice 0
+                val nombre = resultadoConsultaLectura.getString(1)
+                val descripcion = resultadoConsultaLectura.getString(2)
+                if(id != null){
+                    // val usuarioEncontrado = BEntrenador(0, "" , "")
+                    usuarioEncontrado.id = id
+                    usuarioEncontrado.nombre = nombre
+                    usuarioEncontrado.descripcion = descripcion
+                    // arreglo.add(usuarioEncontrado)
+                }
+            } while (resultadoConsultaLectura.moveToNext())
+        }
+        resultadoConsultaLectura.close()
+        baseDatosLectura.close()
+        return usuarioEncontrado //arreglo
+    }
+
 
 }
