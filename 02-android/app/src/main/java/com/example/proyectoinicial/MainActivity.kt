@@ -104,6 +104,7 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 irActividad(ECrudEntrenador::class.java)
             }
+
     } // Termina onCreate
 
     fun abrirActividadConParametros(
