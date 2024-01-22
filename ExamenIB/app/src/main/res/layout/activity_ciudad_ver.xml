@@ -23,7 +23,7 @@
         android:layout_height="42dp"
         android:paddingTop="10sp"
         android:paddingBottom="10sp"
-        android:text="Ciudades de:"
+        android:text="Listado de ciudades"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -35,25 +35,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/txt_titulo_nombre_pais"
-        android:layout_width="412dp"
-        android:layout_height="53dp"
-        android:paddingTop="10sp"
-        android:paddingBottom="10sp"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txt_titulo_ciudades_ver"
-        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_ciudades_ver" />
-
     <Button
         android:id="@+id/btn_ciudad_crear"
         android:layout_width="121dp"
         android:layout_height="53dp"
-        android:layout_marginTop="44dp"
         android:text="Crear ciudad"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -61,5 +46,5 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_nombre_pais" />
+        tools:layout_editor_absoluteY="139dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

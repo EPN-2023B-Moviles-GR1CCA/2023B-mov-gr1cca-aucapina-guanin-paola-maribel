@@ -32,7 +32,7 @@ class Ciudad_Ver : AppCompatActivity() {
         val codigo_ISO = intent.extras?.getString("codigoISO")
         val nombre_pais = intent.extras?.getString("nombrePais")
 
-        findViewById<TextView>(R.id.txt_titulo_nombre_pais).setText(nombre_pais)
+       // findViewById<TextView>(R.id.txt_titulo_nombre_pais).setText(nombre_pais)
 
         if(codigo_ISO != null){
             ciudades = db.paisApp!!.obtenerCiudadesPorPais(codigo_ISO)

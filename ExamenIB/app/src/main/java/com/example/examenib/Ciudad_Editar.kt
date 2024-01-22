@@ -16,9 +16,9 @@ class Ciudad_Editar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ciudad_editar)
-        val codigoISOPais = intent.extras?.getString("codigoISOPais")
+        val codigoISOPais = intent.extras?.getInt("codigoISOPais")
         val identificadorComida = intent.extras?.getString("codigoCiudad")
-        val nombre_ciudad = intent.extras?.getString("nombreCiudad")
+        val nombre_ciudad = intent.extras?.getInt("nombreCiudad")
 
         /*Definicion del combo box para si es ciudad*/
         val spinnerPlatoDia = findViewById<Spinner>(R.id.spEsCiudad)
@@ -89,7 +89,14 @@ class Ciudad_Editar : AppCompatActivity() {
 
                     val capital = esCapital.equals("Si")
 
-                    val ciudadNuevo = Ciudad(codigoCiudad.text.toString().toInt(), nombreCiudad.text.toString(), capital, superficie.text.toString().toDouble(), (seguridad.text.toString())[0], codigoISOPais!!.toInt())
+                    val ciudadNuevo = Ciudad(
+                        codigoCiudad.text.toString().toInt(),
+                        nombreCiudad.text.toString(),
+                        capital,
+                        superficie.text.toString().toDouble(),
+                        (seguridad.text.toString())[0],
+                        codigoISOPais!!.toInt()
+                    )
 
                     val respuesta = db
                         .paisApp!!.crearCiudad(ciudadNuevo)
