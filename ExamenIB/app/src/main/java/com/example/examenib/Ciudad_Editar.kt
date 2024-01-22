@@ -21,7 +21,7 @@ class Ciudad_Editar : AppCompatActivity() {
         val nombre_ciudad = intent.extras?.getInt("nombreCiudad")
 
         /*Definicion del combo box para si es ciudad*/
-        val spinnerPlatoDia = findViewById<Spinner>(R.id.spEsCiudad)
+        val spinnerEsCiudad= findViewById<Spinner>(R.id.spEsCiudad)
 
         val adaptador = ArrayAdapter.createFromResource(
             this, // contexto,
@@ -29,26 +29,15 @@ class Ciudad_Editar : AppCompatActivity() {
             android.R.layout.simple_spinner_item // como se va a ver (XML).
         )
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_item)
-        spinnerPlatoDia.adapter = adaptador
+        spinnerEsCiudad.adapter = adaptador
         /*Fin definicion spinner*/
 
-        /*Definicion del combo box para tipo de cocina*/
-        val spinnerEsCiudad = findViewById<Spinner>(R.id.spEsCiudad)
-
-        val adaptadorTipoCocina = ArrayAdapter.createFromResource(
-            this, // contexto,
-            R.array.itemsONU,
-            android.R.layout.simple_spinner_item // como se va a ver (XML).
-        )
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_item)
-        spinnerEsCiudad.adapter = adaptadorTipoCocina
-        /*Fin definicion spinner*/
 
         findViewById<TextView>(R.id.txtNombreCiudad).setText("Ciudad a modificar: ${nombre_ciudad}")
 
         if (identificadorComida != null && codigoISOPais != null) {
 
-            val ciudadEdicion = db.paisApp!!.consultarCiudadPorCodYPais(identificadorComida, codigoISOPais)
+            val ciudadEdicion = db.paisApp!!.consultarCiudadPorCodYPais(identificadorComida, codigoISOPais.toString())
 
             val codigoCiudad = findViewById<EditText>(R.id.etxCodCiudad)
             val nombreCiudad = findViewById<EditText>(R.id.etxNombreCiudad)
