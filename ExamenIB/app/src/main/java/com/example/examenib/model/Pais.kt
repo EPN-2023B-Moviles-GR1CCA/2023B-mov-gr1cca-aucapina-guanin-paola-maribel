@@ -8,7 +8,11 @@ class Pais(
     var miembroONU: Boolean
 ){
     override fun toString(): String {
-        return "Código ISO:$codigoISO, Nombre:'$nombrePais', PIB Nominal:$pibPais, Es miembro de la ONU:$miembroONU, Simbolo del la moneda local:$simboloDinero)"
+        return "País: $nombrePais\n" +
+                "Código ISO: $codigoISO\n" +
+                "PIB Nominal: $pibPais\n" +
+                "Miembro de la ONU: $miembroONU\n" +
+                "Símbolo de la moneda local: $simboloDinero"
     }
 
     fun verificarMiembroONU(miembroONU: Boolean): String{

@@ -19,18 +19,18 @@
       app:layout_constraintVertical_bias="0.052" />
 
   <TextView
-      android:id="@+id/txtNombrePais"
+      android:id="@+id/txtNombreCiudad"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="48dp"
       android:text="Nombre:"
-      app:layout_constraintEnd_toEndOf="@+id/txtCodIso"
+      app:layout_constraintEnd_toEndOf="@+id/txtCodCiudad"
       app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="@+id/txtCodIso"
-      app:layout_constraintTop_toBottomOf="@+id/txtCodIso" />
+      app:layout_constraintStart_toStartOf="@+id/txtCodCiudad"
+      app:layout_constraintTop_toBottomOf="@+id/txtCodCiudad" />
 
   <TextView
-      android:id="@+id/txtCodIso"
+      android:id="@+id/txtCodCiudad"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="40dp"
@@ -41,101 +41,101 @@
       app:layout_constraintTop_toBottomOf="@+id/txtDatos" />
 
   <TextView
-      android:id="@+id/txtPibPais"
+      android:id="@+id/txtSuperCiudad"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="68dp"
       android:text="PIB Nominal:"
-      app:layout_constraintEnd_toEndOf="@+id/txtNombrePais"
+      app:layout_constraintEnd_toEndOf="@+id/txtNombreCiudad"
       app:layout_constraintHorizontal_bias="0.269"
-      app:layout_constraintStart_toStartOf="@+id/txtNombrePais"
-      app:layout_constraintTop_toBottomOf="@+id/txtNombrePais" />
+      app:layout_constraintStart_toStartOf="@+id/txtNombreCiudad"
+      app:layout_constraintTop_toBottomOf="@+id/txtNombreCiudad" />
 
   <TextView
-      android:id="@+id/txtMiembroONU"
+      android:id="@+id/txtEsCapital"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="72dp"
       android:text="Es miembro de la ONU: "
-      app:layout_constraintEnd_toEndOf="@+id/txtSimDinero"
+      app:layout_constraintEnd_toEndOf="@+id/txtSeguridad"
       app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="@+id/txtSimDinero"
-      app:layout_constraintTop_toBottomOf="@+id/txtSimDinero" />
+      app:layout_constraintStart_toStartOf="@+id/txtSeguridad"
+      app:layout_constraintTop_toBottomOf="@+id/txtSeguridad" />
 
   <TextView
-      android:id="@+id/txtSimDinero"
+      android:id="@+id/txtSeguridad"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="76dp"
       android:text="Simbolo de la moneda local: "
-      app:layout_constraintEnd_toEndOf="@+id/txtPibPais"
+      app:layout_constraintEnd_toEndOf="@+id/txtSuperCiudad"
       app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="@+id/txtPibPais"
-      app:layout_constraintTop_toBottomOf="@+id/txtPibPais" />
+      app:layout_constraintStart_toStartOf="@+id/txtSuperCiudad"
+      app:layout_constraintTop_toBottomOf="@+id/txtSuperCiudad" />
 
   <EditText
-      android:id="@+id/etxCodIso"
+      android:id="@+id/etxCodCiudad"
       android:layout_width="157dp"
       android:layout_height="53dp"
       android:layout_marginStart="28dp"
       android:ems="10"
       android:hint="112"
       android:inputType="number"
-      app:layout_constraintBottom_toBottomOf="@+id/txtCodIso"
-      app:layout_constraintStart_toEndOf="@+id/txtCodIso"
-      app:layout_constraintTop_toTopOf="@+id/txtCodIso"
+      app:layout_constraintBottom_toBottomOf="@+id/txtCodCiudad"
+      app:layout_constraintStart_toEndOf="@+id/txtCodCiudad"
+      app:layout_constraintTop_toTopOf="@+id/txtCodCiudad"
       app:layout_constraintVertical_bias="0.588" />
 
   <EditText
-      android:id="@+id/etxNombrePais"
+      android:id="@+id/etxNombreCiudad"
       android:layout_width="262dp"
       android:layout_height="73dp"
       android:layout_marginStart="44dp"
       android:ems="10"
       android:hint="Ejm. Corea del Sur"
       android:inputType="text"
-      app:layout_constraintBottom_toBottomOf="@+id/txtNombrePais"
-      app:layout_constraintStart_toEndOf="@+id/txtNombrePais"
-      app:layout_constraintTop_toTopOf="@+id/txtNombrePais" />
+      app:layout_constraintBottom_toBottomOf="@+id/txtNombreCiudad"
+      app:layout_constraintStart_toEndOf="@+id/txtNombreCiudad"
+      app:layout_constraintTop_toTopOf="@+id/txtNombreCiudad" />
 
   <EditText
-      android:id="@+id/etxPibPais"
+      android:id="@+id/etxSuperficieCiudad"
       android:layout_width="239dp"
       android:layout_height="58dp"
       android:layout_marginStart="24dp"
       android:ems="10"
       android:hint="Ejm. 124.00"
       android:inputType="numberDecimal"
-      app:layout_constraintBottom_toBottomOf="@+id/txtPibPais"
-      app:layout_constraintStart_toEndOf="@+id/txtPibPais"
-      app:layout_constraintTop_toTopOf="@+id/txtPibPais"
+      app:layout_constraintBottom_toBottomOf="@+id/txtSuperCiudad"
+      app:layout_constraintStart_toEndOf="@+id/txtSuperCiudad"
+      app:layout_constraintTop_toTopOf="@+id/txtSuperCiudad"
       app:layout_constraintVertical_bias="0.461" />
 
   <EditText
-      android:id="@+id/etxSimDinero"
+      android:id="@+id/etxSeguridadCiudad"
       android:layout_width="155dp"
       android:layout_height="49dp"
       android:layout_marginStart="32dp"
       android:ems="10"
+      android:hint="Ejm: $"
       android:inputType="text"
-      android:text="Ejm: $"
-      app:layout_constraintBottom_toBottomOf="@+id/txtSimDinero"
-      app:layout_constraintStart_toEndOf="@+id/txtSimDinero"
-      app:layout_constraintTop_toTopOf="@+id/txtSimDinero"
+      app:layout_constraintBottom_toBottomOf="@+id/txtSeguridad"
+      app:layout_constraintStart_toEndOf="@+id/txtSeguridad"
+      app:layout_constraintTop_toTopOf="@+id/txtSeguridad"
       app:layout_constraintVertical_bias="0.433" />
 
   <Spinner
-      android:id="@+id/spMiembroONU"
+      android:id="@+id/spEsCiudad"
       android:layout_width="171dp"
       android:layout_height="51dp"
       android:layout_marginStart="44dp"
-      app:layout_constraintBottom_toBottomOf="@+id/txtMiembroONU"
-      app:layout_constraintStart_toEndOf="@+id/txtMiembroONU"
-      app:layout_constraintTop_toTopOf="@+id/txtMiembroONU"
+      app:layout_constraintBottom_toBottomOf="@+id/txtEsCapital"
+      app:layout_constraintStart_toEndOf="@+id/txtEsCapital"
+      app:layout_constraintTop_toTopOf="@+id/txtEsCapital"
       app:layout_constraintVertical_bias="0.312" />
 
   <Button
-      android:id="@+id/btnGuardarPais"
+      android:id="@+id/btnGuardarCiudad"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Guardar"

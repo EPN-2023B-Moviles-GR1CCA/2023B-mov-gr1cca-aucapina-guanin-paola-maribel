@@ -17,7 +17,7 @@ class Pais_Crear : AppCompatActivity() {
         setContentView(R.layout.activity_pais_crear)
 
         //Funcionalidad del Spinner
-        val spinnerPaisONU=findViewById<Spinner>(R.id.spMiembroONU)
+        val spinnerPaisONU=findViewById<Spinner>(R.id.spEsCiudad)
         val adapter=ArrayAdapter.createFromResource(
             this,
             R.array.itemsONU,
@@ -27,17 +27,17 @@ class Pais_Crear : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerPaisONU.adapter=adapter
         //Funcionalidad Boton Crear Pais
-        val btnSavePais=findViewById<Button>(R.id.btnGuardarPais)
+        val btnSavePais=findViewById<Button>(R.id.btnGuardarCiudad)
         btnSavePais
             .setOnClickListener{
 
                 try {
 
 
-                    val codigoISO = findViewById<EditText>(R.id.etxCodIso)
-                    val nombrePais = findViewById<EditText>(R.id.etxNombrePais)
-                    val pibPais = findViewById<EditText>(R.id.etxPibPais)
-                    val simboloDinero = findViewById<EditText>(R.id.etxSimDinero)
+                    val codigoISO = findViewById<EditText>(R.id.etxCodCiudad)
+                    val nombrePais = findViewById<EditText>(R.id.etxNombreCiudad)
+                    val pibPais = findViewById<EditText>(R.id.etxSuperficieCiudad)
+                    val simboloDinero = findViewById<EditText>(R.id.etxSeguridadCiudad)
                     val miembroONU = spinnerPaisONU.selectedItem.toString()
 
                     val miembro = miembroONU.equals("Si")
@@ -61,7 +61,7 @@ class Pais_Crear : AppCompatActivity() {
                     }else{
                         mostrarSnackbar("No se creo")
                     }
-                    //   }*/
+
 
                 } catch (e: Exception) {
                     Log.e("Error", "Error en la aplicación", e)

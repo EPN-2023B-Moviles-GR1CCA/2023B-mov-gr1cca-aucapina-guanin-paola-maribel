@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.examenib.model.Ciudad
 import com.example.examenib.model.Pais
 
 class PaisDB  (
@@ -15,6 +16,7 @@ class PaisDB  (
     1
 ){
     override fun onCreate(db: SQLiteDatabase?) {
+        //creacion tabla paises
         val createPaisTableSQL =
             """
                 CREATE TABLE IF NOT EXISTS paises (
@@ -27,11 +29,70 @@ class PaisDB  (
                 );
             """. trimIndent()
         db?.execSQL(createPaisTableSQL)
+        //Creacion tabla ciudades
+        val createCiudadTableSQL =
+            """
+                CREATE TABLE IF NOT EXISTS ciudades (
+                    codigoCiudad INTEGER PRIMARY KEY ON CONFLICT ABORT,
+                    nombreCiudad TEXT,
+                    esCapital INTEGER,
+                    superficie DOUBLE,
+                    seguridad CHAR,
+                    codigoISOPais INTEGER,
+                    CONSTRAINT fk_paises
+                    FOREIGN KEY (codigoISOPais)
+                    REFERENCES paises(codigoISO)
+                    ON DELETE CASCADE
+                    
+                );
+            """. trimIndent()
+        db?.execSQL(createCiudadTableSQL)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        if (oldVersion < 5) {
+            // Elimina las tablas si existen
+            db?.execSQL("DROP TABLE IF EXISTS ciudades")
+            db?.execSQL("DROP TABLE IF EXISTS paises")
+
+            // Vuelve a crear la tabla paises
+            val createPaisTableSQL =
+                """
+                CREATE TABLE IF NOT EXISTS paises (
+                    codigoISO INTEGER PRIMARY KEY ON CONFLICT ABORT,
+                    nombrePais TEXT,
+                    pibPais DOUBLE,
+                    simboloDinero CHAR,
+                    miembroONU INTEGER
+                    
+                );
+            """. trimIndent()
+            db?.execSQL(createPaisTableSQL)
+
+            // Vuelve a crear la tabla ciudades con ON DELETE CASCADE
+            val createCiudadTableSQL =
+                """
+                CREATE TABLE IF NOT EXISTS ciudades (
+                    codigoCiudad INTEGER PRIMARY KEY ON CONFLICT ABORT,
+                    nombreCiudad TEXT,
+                    esCapital INTEGER,
+                    superficie DOUBLE,
+                    seguridad CHAR,
+                    codigoISOPais INTEGER,
+                    CONSTRAINT fk_paises
+                    FOREIGN KEY (codigoISOPais)
+                    REFERENCES paises(codigoISO)
+                    ON DELETE CASCADE
+                    
+                );
+            """. trimIndent()
+            db?.execSQL(createCiudadTableSQL)
+
+        }
 
     }
+
+    //CRUD Pais
 
     fun crearPais(nuevoPais: Pais):Boolean{
         val wrBD=writableDatabase
@@ -132,30 +193,29 @@ class PaisDB  (
         return paisEncontrado //arreglo
     }
 
-    /*
+
     fun updatePorISO(
         datosActualizados: Pais
     ): Boolean{
         val conexionEscritura = writableDatabase
         val updateValues = ContentValues()
-        valoresAActualizar.put("nombre", datosActualizados.nombre)
-        valoresAActualizar.put("apellido", datosActualizados.apellido)
-        valoresAActualizar.put("edad", datosActualizados.edad)
-        valoresAActualizar.put("fechaContratacion", datosActualizados.fechaContratacion)
-        valoresAActualizar.put("salario", datosActualizados.salario)
-        valoresAActualizar.put("isMainChef", if(datosActualizados.isMainChef) 1 else 0)
+        updateValues.put("nombrePais", datosActualizados.nombrePais)
+        updateValues.put("pibPais", datosActualizados.pibPais)
+        updateValues.put("simboloDinero", datosActualizados.simboloDinero.toString())
+        updateValues.put("miembroONU", if(datosActualizados.miembroONU) 1 else 0)
+
         //where id = ?
-        val parametrosConsultaActualizar = arrayOf(datosActualizados.codigoUnico)
-        val resultadoActualizcion = conexionEscritura
+        val parametrosConsultaActualizar = arrayOf(datosActualizados.codigoISO.toString())
+        val resultadoActualizacion = conexionEscritura
             .update(
-                "COCINERO", //tabla
-                valoresAActualizar,
-                "codigoUnico = ?",
+                "paises", //tabla
+                updateValues,
+                "codigoISO = ?",
                 parametrosConsultaActualizar
             )
         conexionEscritura.close()
-        return if (resultadoActualizcion == -1) false else true
-    }*/
+        return if (resultadoActualizacion == -1) false else true
+    }
 
     fun deleteISO(codigoISO: Int): Boolean{
         val conexionEscritura = writableDatabase
@@ -172,6 +232,154 @@ class PaisDB  (
         conexionEscritura.close()
         return if(resultadoEliminacion == -1) false else true
     }
+
+    //CRUD Ciudad
+    fun crearCiudad(nuevaCiudad: Ciudad): Boolean{
+        val basedatosEscritura = writableDatabase
+        val valoresAGuardar = ContentValues()
+
+        valoresAGuardar.put("codigoCiudad", nuevaCiudad.codigoCiudad)
+        valoresAGuardar.put("nombreCiudad", nuevaCiudad.nombreCiudad)
+        valoresAGuardar.put("esCapital" , if(nuevaCiudad.esCapital) 1 else 0)
+        valoresAGuardar.put("seguridad", nuevaCiudad.seguridad.toString())
+        valoresAGuardar.put("codigoISOPais", nuevaCiudad.codigoISOPais)
+
+        val resultadoGuardar = basedatosEscritura
+            .insert(
+                "ciudades", //nombre de la tabla
+                null,
+                valoresAGuardar //valores
+            )
+
+        basedatosEscritura.close()
+        return if (resultadoGuardar.toInt() == -1) false else true
+    }
+
+    fun obtenerCiudadesPorPais(codigoISO: String): ArrayList<Ciudad> {
+        val ciudades = arrayListOf<Ciudad>()
+        val baseDatosLectura = readableDatabase
+
+        val scriptConsultaLectura = """
+            SELECT * FROM ciudades WHERE codigoISO = ?
+        """.trimIndent()
+
+        val parametrosConsultaLectura = arrayOf(codigoISO)
+        val resultadoConsultaLectura = baseDatosLectura.rawQuery(
+            scriptConsultaLectura, //Consulta
+            parametrosConsultaLectura //Parametros
+        )
+
+        if(resultadoConsultaLectura != null && resultadoConsultaLectura.moveToFirst()){
+
+            do{
+                val codigoCiudad = resultadoConsultaLectura.getInt(0)
+                val nombreCiudad = resultadoConsultaLectura.getString(1)
+                val esCapital = resultadoConsultaLectura.getString(2)
+                val superficie = resultadoConsultaLectura.getDouble(3)
+                val seguridad = resultadoConsultaLectura.getString(4)
+                val codigoISOPais= resultadoConsultaLectura.getInt(5)
+
+                if(codigoCiudad != null){
+                    val ciudadEncontrada = Ciudad(1, "Ambato", true, 12.0, 'A', 112)
+                    ciudadEncontrada.codigoCiudad = codigoCiudad
+                    ciudadEncontrada.nombreCiudad= nombreCiudad
+                    ciudadEncontrada.esCapital = esCapital.equals("1")
+                    ciudadEncontrada.superficie = superficie
+                    ciudadEncontrada.seguridad = seguridad[0]
+                    ciudadEncontrada.codigoISOPais = codigoISOPais
+
+                    ciudades.add(ciudadEncontrada)
+                }
+            } while (resultadoConsultaLectura.moveToNext())
+        }
+
+        resultadoConsultaLectura?.close()
+        baseDatosLectura.close()
+
+        return ciudades //arreglo
+    }
+
+    fun consultarCiudadPorCodYPais(codigoCiudad: String, codigoISOPais: String): Ciudad{
+        val baseDatosLectura = readableDatabase
+
+        val scriptConsultaLectura = """
+            SELECT * FROM ciudades WHERE codigoCiudad = ? AND codigoISOPais = ?
+        """.trimIndent()
+
+        val parametrosConsultaLectura = arrayOf(codigoCiudad, codigoISOPais)
+
+        val resultadoConsultaLectura = baseDatosLectura.rawQuery(
+            scriptConsultaLectura, //Consulta
+            parametrosConsultaLectura //Parametros
+        )
+
+        val existePais = resultadoConsultaLectura.moveToFirst()
+
+        val ciudadEncontrada = Ciudad(0,"",false,0.0,'A',0)
+        if(existePais){
+            do{
+                val codigoCiudad = resultadoConsultaLectura.getInt(0)
+                val nombreCiudad = resultadoConsultaLectura.getString(1)
+                val esCapital = resultadoConsultaLectura.getString(2)
+                val superficie = resultadoConsultaLectura.getDouble(3)
+                val seguridad = resultadoConsultaLectura.getString(4)
+                val codigoISOPais= resultadoConsultaLectura.getInt(5)
+               if(codigoCiudad!= null){
+                   ciudadEncontrada.codigoCiudad = codigoCiudad
+                   ciudadEncontrada.nombreCiudad= nombreCiudad
+                   ciudadEncontrada.esCapital = esCapital.equals("1")
+                   ciudadEncontrada.superficie = superficie
+                   ciudadEncontrada.seguridad = seguridad[0]
+                   ciudadEncontrada.codigoISOPais = codigoISOPais
+                }
+            } while (resultadoConsultaLectura.moveToNext())
+        }
+
+        resultadoConsultaLectura.close()
+        baseDatosLectura.close()
+        return ciudadEncontrada//arreglo
+    }
+
+    fun actualizarCiudadPorCodYPais(
+        datosActualizados: Ciudad
+    ): Boolean{
+        val conexionEscritura = writableDatabase
+        val valoresAActualizar = ContentValues()
+        valoresAActualizar.put("codigoCiudad", datosActualizados.codigoCiudad)
+        valoresAActualizar.put("nombreCiudad", datosActualizados.nombreCiudad)
+        valoresAActualizar.put("esCapital", if(datosActualizados.esCapital) 1 else 0)
+        valoresAActualizar.put("superficie", datosActualizados.superficie)
+        valoresAActualizar.put("seguridad", datosActualizados.seguridad.toString())
+        valoresAActualizar.put("codigoISOPais", datosActualizados.codigoISOPais)
+        //where id = ?
+        val parametrosConsultaActualizar = arrayOf(datosActualizados.codigoCiudad.toString(), datosActualizados.codigoISOPais.toString())
+        val resultadoActualizcion = conexionEscritura
+            .update(
+                "ciudades",//tabla
+                valoresAActualizar,
+                "codigoCiudad = ? and codigoISOPais = ?",
+                parametrosConsultaActualizar
+            )
+        conexionEscritura.close()
+        return if (resultadoActualizcion == -1) false else true
+    }
+
+    fun eliminarCiudadPorCodEISO(codigoComida: String, codigoUnico: String): Boolean{
+        val conexionEscritura = writableDatabase
+
+        val parametrosConsultaDelete = arrayOf( codigoComida, codigoUnico)
+
+        val resultadoEliminacion = conexionEscritura
+            .delete(
+                "ciudades", //tabla
+                "codigoCiudad = ? and codigoISOPais = ?",
+                parametrosConsultaDelete
+            )
+
+        conexionEscritura.close()
+        return if(resultadoEliminacion == -1) false else true
+    }
+
 
 
 
