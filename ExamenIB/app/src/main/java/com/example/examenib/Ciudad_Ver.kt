@@ -38,7 +38,7 @@ class Ciudad_Ver : AppCompatActivity() {
             ciudades = db.paisApp!!.obtenerCiudadesPorPais(codigo_ISO)
             if(ciudades.size != 0){
                 //listado de ciudades
-                val listView = findViewById<ListView>(R.id.lv_list_ciudades)
+                val listView = findViewById<ListView>(R.id.lv_ciudades_ver)
 
                 val adaptador = ArrayAdapter(
                     this, // contexto

@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.example.examenib.model.Ciudad
 import com.example.examenib.model.Pais
 
@@ -11,9 +12,9 @@ class PaisDB  (
     contexto: Context?, //this
 ): SQLiteOpenHelper(
     contexto,
-    "bd_examenIB",
+    "db_examenIB",
     null,
-    1
+    5
 ){
     override fun onCreate(db: SQLiteDatabase?) {
         //creacion tabla paises
@@ -255,15 +256,17 @@ class PaisDB  (
         return if (resultadoGuardar.toInt() == -1) false else true
     }
 
-    fun obtenerCiudadesPorPais(codigoISO: String): ArrayList<Ciudad> {
+    fun obtenerCiudadesPorPais(codigoISOPais: String): ArrayList<Ciudad> {
         val ciudades = arrayListOf<Ciudad>()
         val baseDatosLectura = readableDatabase
 
         val scriptConsultaLectura = """
-            SELECT * FROM ciudades WHERE codigoISO = ?
+            SELECT * FROM ciudades WHERE codigoISOPais = ?
         """.trimIndent()
 
-        val parametrosConsultaLectura = arrayOf(codigoISO)
+        val parametrosConsultaLectura = arrayOf(codigoISOPais)
+        Log.d("ConsultaSQL", scriptConsultaLectura)
+
         val resultadoConsultaLectura = baseDatosLectura.rawQuery(
             scriptConsultaLectura, //Consulta
             parametrosConsultaLectura //Parametros

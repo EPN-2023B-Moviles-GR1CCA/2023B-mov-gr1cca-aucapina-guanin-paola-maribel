@@ -88,18 +88,6 @@
         app:layout_constraintVertical_bias="0.588" />
 
     <EditText
-        android:id="@+id/etxNombreCiudad"
-        android:layout_width="262dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="44dp"
-        android:ems="10"
-        android:hint="Ejm. Seúl"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/txtNombreCiudad"
-        app:layout_constraintStart_toEndOf="@+id/txtNombreCiudad"
-        app:layout_constraintTop_toTopOf="@+id/txtNombreCiudad" />
-
-    <EditText
         android:id="@+id/etxSuperficieCiudad"
         android:layout_width="239dp"
         android:layout_height="58dp"

@@ -89,15 +89,7 @@ class Ciudad_Editar : AppCompatActivity() {
 
                     val capital = esCapital.equals("Si")
 
-                    val ciudadNuevo = Ciudad(
-                        codigoCiudad.text.toString().toInt(),
-                        nombreCiudad.text.toString(),
-                        capital,
-                        superficie.text.toString().toDouble(),
-                        (seguridad.text.toString())[0],
-                        codigoISOPais!!.toInt()
-
-                    )
+                    val ciudadNuevo = Ciudad(codigoCiudad.text.toString().toInt(), nombreCiudad.text.toString(), capital, superficie.text.toString().toDouble(), (seguridad.text.toString())[0], codigoISOPais!!.toInt())
 
                     val respuesta = db
                         .paisApp!!.crearCiudad(ciudadNuevo)
