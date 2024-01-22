@@ -16,9 +16,9 @@ class Ciudad_Editar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ciudad_editar)
-        val codigoISOPais = intent.extras?.getInt("codigoISOPais")
+        val codigoISOPais = intent.extras?.getString("codigoISOPais")
         val identificadorComida = intent.extras?.getString("codigoCiudad")
-        val nombre_ciudad = intent.extras?.getInt("nombreCiudad")
+        val nombre_ciudad = intent.extras?.getString("nombreCiudad")
 
         /*Definicion del combo box para si es ciudad*/
         val spinnerEsCiudad= findViewById<Spinner>(R.id.spEsCiudad)
@@ -37,7 +37,7 @@ class Ciudad_Editar : AppCompatActivity() {
 
         if (identificadorComida != null && codigoISOPais != null) {
 
-            val ciudadEdicion = db.paisApp!!.consultarCiudadPorCodYPais(identificadorComida, codigoISOPais.toString())
+            val ciudadEdicion = db.paisApp!!.consultarCiudadPorCodYPais(identificadorComida, codigoISOPais)
 
             val codigoCiudad = findViewById<EditText>(R.id.etxCodCiudad)
             val nombreCiudad = findViewById<EditText>(R.id.etxNombreCiudad)
@@ -65,7 +65,7 @@ class Ciudad_Editar : AppCompatActivity() {
 
         }
 
-        /*Edicion de comida*/
+        /*Edicion de ciudad*/
         val btnActualizarCiudad= findViewById<Button>(R.id.btnGuardarCiudad)
         btnActualizarCiudad
             .setOnClickListener {
@@ -78,7 +78,7 @@ class Ciudad_Editar : AppCompatActivity() {
 
                     val capital = esCapital.equals("Si")
 
-                    val ciudadNuevo = Ciudad(
+                    val updateCiudad = Ciudad(
                         codigoCiudad.text.toString().toInt(),
                         nombreCiudad.text.toString(),
                         capital,
@@ -88,15 +88,15 @@ class Ciudad_Editar : AppCompatActivity() {
                     )
 
                     val respuesta = db
-                        .paisApp!!.crearCiudad(ciudadNuevo)
+                        .paisApp!!.actualizarCiudadPorCodYPais(updateCiudad)
 
                     if(respuesta) {
                         val data = Intent()
-                        data.putExtra("mensaje", "Se creo")
+                        data.putExtra("mensaje", "Se editó ciudad")
                         setResult(RESULT_OK, data)
                         finish()
                     }else{
-                        mostrarSnackbar("No se creo")
+                        mostrarSnackbar("No se editó ciudad")
                     }
 
                 } catch (e: Exception) {

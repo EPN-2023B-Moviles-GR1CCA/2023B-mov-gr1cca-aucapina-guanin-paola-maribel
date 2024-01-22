@@ -316,10 +316,10 @@ class PaisDB  (
             parametrosConsultaLectura //Parametros
         )
 
-        val existePais = resultadoConsultaLectura.moveToFirst()
+        val existeCiudad = resultadoConsultaLectura.moveToFirst()
 
         val ciudadEncontrada = Ciudad(0,"",false,0.0,'A',0)
-        if(existePais){
+        if(existeCiudad){
             do{
                 val codigoCiudad = resultadoConsultaLectura.getInt(0)
                 val nombreCiudad = resultadoConsultaLectura.getString(1)
