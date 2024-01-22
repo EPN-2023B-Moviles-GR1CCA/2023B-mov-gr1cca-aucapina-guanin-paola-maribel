@@ -113,7 +113,7 @@ class Ciudad_Ver : AppCompatActivity() {
 //                mostrarSnackbar(identificador)
                 val extras = Bundle()
 
-                extras.putInt("codigoCiudad", codigoCiudad)
+                extras.putString("codigoCiudad", codigoCiudad.toString())
                 extras.putString("nombreCiudad", nombreCiudad)
                 extras.putBoolean("esCapital", esCapital)
                 extras.putDouble("superficie", superficie)

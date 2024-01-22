@@ -16,11 +16,11 @@ class Ciudad_Editar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ciudad_editar)
-        val codigoISOPais = intent.extras?.getString("codigoISOPais")
+        val codigoISOPais = intent.extras?.getInt("codigoISOPais")
         val identificadorComida = intent.extras?.getString("codigoCiudad")
         val nombre_ciudad = intent.extras?.getString("nombreCiudad")
 
-        /*Definicion del combo box para si es ciudad*/
+        //Definicion del combo box para si es ciudad
         val spinnerEsCiudad= findViewById<Spinner>(R.id.spEsCiudad)
 
         val adaptador = ArrayAdapter.createFromResource(
@@ -30,24 +30,25 @@ class Ciudad_Editar : AppCompatActivity() {
         )
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerEsCiudad.adapter = adaptador
-        /*Fin definicion spinner*/
+        //fin spinner
 
 
-        findViewById<TextView>(R.id.txtNombreCiudad).setText("Ciudad a modificar: ${nombre_ciudad}")
+                findViewById<TextView>(R.id.txtNombreCiudad).setText("Ciudad a modificar: $nombre_ciudad")
 
+        mostrarSnackbar(identificadorComida.toString() + "  " + codigoISOPais)
         if (identificadorComida != null && codigoISOPais != null) {
 
-            val ciudadEdicion = db.paisApp!!.consultarCiudadPorCodYPais(identificadorComida, codigoISOPais)
+            val ciudadEdicion = db.paisApp!!.consultarCiudadPorCodYPais(identificadorComida, codigoISOPais.toString())
 
             val codigoCiudad = findViewById<EditText>(R.id.etxCodCiudad)
-            val nombreCiudad = findViewById<EditText>(R.id.etxNombreCiudad)
+//            val nombreCiudad = findViewById<EditText>(R.id.etxNombreCiudad)
             val superficie = findViewById<EditText>(R.id.etxSuperficieCiudad)
             val seguridad = findViewById<EditText>(R.id.etxSeguridadCiudad)
             val esCapital = spinnerEsCiudad.selectedItem.toString()
 
 
             codigoCiudad.setText(ciudadEdicion.codigoCiudad.toString())
-            nombreCiudad.setText(ciudadEdicion.nombreCiudad)
+//            nombreCiudad.setText(ciudadEdicion.nombreCiudad)
             superficie.setText(ciudadEdicion.superficie.toString())
             seguridad.setText(ciudadEdicion.seguridad.toString())
 
@@ -65,22 +66,22 @@ class Ciudad_Editar : AppCompatActivity() {
 
         }
 
-        /*Edicion de ciudad*/
+        //Edicion de ciudad
         val btnActualizarCiudad= findViewById<Button>(R.id.btnGuardarCiudad)
         btnActualizarCiudad
             .setOnClickListener {
                 try {
                     val codigoCiudad = findViewById<EditText>(R.id.etxCodCiudad)
-                    val nombreCiudad = findViewById<EditText>(R.id.etxNombreCiudad)
+//                    val nombreCiudad = findViewById<EditText>(R.id.etxNombreCiudad)
                     val superficie = findViewById<EditText>(R.id.etxSuperficieCiudad)
                     val seguridad = findViewById<EditText>(R.id.etxSeguridadCiudad)
                     val esCapital = spinnerEsCiudad.selectedItem.toString()
 
                     val capital = esCapital.equals("Si")
 
-                    val updateCiudad = Ciudad(
+                    val ciudadNuevo = Ciudad(
                         codigoCiudad.text.toString().toInt(),
-                        nombreCiudad.text.toString(),
+                        nombre_ciudad.toString(),
                         capital,
                         superficie.text.toString().toDouble(),
                         (seguridad.text.toString())[0],
@@ -88,15 +89,15 @@ class Ciudad_Editar : AppCompatActivity() {
                     )
 
                     val respuesta = db
-                        .paisApp!!.actualizarCiudadPorCodYPais(updateCiudad)
+                        .paisApp!!.actualizarCiudadPorCodYPais(ciudadNuevo)
 
                     if(respuesta) {
                         val data = Intent()
-                        data.putExtra("mensaje", "Se editó ciudad")
+                        data.putExtra("mensaje", "Se creo")
                         setResult(RESULT_OK, data)
                         finish()
                     }else{
-                        mostrarSnackbar("No se editó ciudad")
+                        mostrarSnackbar("No se creo")
                     }
 
                 } catch (e: Exception) {

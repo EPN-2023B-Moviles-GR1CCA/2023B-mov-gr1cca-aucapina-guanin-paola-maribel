@@ -49,7 +49,7 @@ class Pais_Editar : AppCompatActivity() {
             nombrePais.setText(paisEdicion.nombrePais)
             pibPais.setText(paisEdicion.pibPais.toString())
             simboloDinero.setText(paisEdicion.simboloDinero.toString())
-            // Configura el Spinner con el valor de isMainChef
+            // Configura el Spinner con el valor de miembroOnu
             val miembroONUArray = resources.getStringArray(R.array.itemsONU)
 
             val miembroONUPosition = if (paisEdicion.miembroONU) {
