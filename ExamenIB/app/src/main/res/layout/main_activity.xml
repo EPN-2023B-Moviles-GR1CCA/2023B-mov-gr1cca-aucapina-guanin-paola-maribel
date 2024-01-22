@@ -8,40 +8,71 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtPaises"
-        android:layout_width="133dp"
-        android:layout_height="45dp"
-        android:text="App Paises"
-        android:textColor="#673AB7"
+        android:id="@+id/txt_titulo_ciudades_ver2"
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="@color/purple_200"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:text="     App Pais-Ciudad"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txt_titulo_ciudades_ver7"
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="@color/purple_200"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear"
+        android:background="@android:drawable/btn_default"
+        android:shadowColor="@color/purple_200"
+        android:text="Crear nuevo pais"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <ListView
         android:id="@+id/lv_list_paises"
         android:layout_width="346dp"
         android:layout_height="494dp"
+        android:backgroundTint="@color/purple_200"
+        android:cacheColorHint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392">
+        app:layout_constraintVertical_bias="0.662">
 
     </ListView>
 

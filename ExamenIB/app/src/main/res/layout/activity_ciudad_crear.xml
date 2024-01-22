@@ -8,33 +8,62 @@
     tools:context=".Ciudad_Crear">
 
     <TextView
-        android:id="@+id/txtDatos"
-        android:layout_width="237dp"
-        android:layout_height="42dp"
-        android:text="Ingresa los datos de ciudad: "
+        android:id="@+id/txt_titulo_ciudades_ver6"
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="@android:color/system_accent2_400"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:text="     Crear una ciudad"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/txtNombreCiudad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Nombre:"
-        app:layout_constraintEnd_toEndOf="@+id/txtCodCiudad"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtCodCiudad"
-        app:layout_constraintTop_toBottomOf="@+id/txtCodCiudad" />
+        android:id="@+id/txt_titulo_ciudades_ver12"
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="@android:color/system_accent2_400"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/etxNombreCiudad"
+        android:layout_width="262dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="28dp"
+        android:ems="10"
+        android:hint="Ejm. Seúl"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNombreCiudad"
+        app:layout_constraintStart_toEndOf="@+id/txtNombreCiudad"
+        app:layout_constraintTop_toTopOf="@+id/txtNombreCiudad"
+        app:layout_constraintVertical_bias="0.648" />
 
     <TextView
         android:id="@+id/txtCodCiudad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:text="Código Ciudad:"
         app:layout_constraintEnd_toEndOf="@+id/txtDatos"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,97 +71,84 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDatos" />
 
     <TextView
-        android:id="@+id/txtSuperCiudad"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Superficie:"
-        app:layout_constraintEnd_toEndOf="@+id/txtNombreCiudad"
-        app:layout_constraintHorizontal_bias="0.269"
-        app:layout_constraintStart_toStartOf="@+id/txtNombreCiudad"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreCiudad" />
+        android:layout_marginTop="12dp"
+        android:text="M=Media"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/txtNombreCiudad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Nombre:"
+        app:layout_constraintEnd_toEndOf="@+id/txtCodCiudad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtCodCiudad"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodCiudad" />
 
     <TextView
         android:id="@+id/txtEsCapital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="124dp"
         android:text="Es capital: "
-        app:layout_constraintEnd_toEndOf="@+id/txtSeguridad"
+        app:layout_constraintEnd_toEndOf="@+id/txtSeguridad2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtSeguridad"
-        app:layout_constraintTop_toBottomOf="@+id/txtSeguridad" />
+        app:layout_constraintStart_toStartOf="@+id/txtSeguridad2"
+        app:layout_constraintTop_toBottomOf="@+id/txtSeguridad2" />
 
     <TextView
-        android:id="@+id/txtSeguridad"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Seguridad: "
-        app:layout_constraintEnd_toEndOf="@+id/txtSuperCiudad"
+        android:layout_marginTop="4dp"
+        android:text="Baja=B"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtSuperCiudad"
-        app:layout_constraintTop_toBottomOf="@+id/txtSuperCiudad" />
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Alta=A"
+        app:layout_constraintEnd_toEndOf="@+id/txtSeguridad2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtSeguridad2"
+        app:layout_constraintTop_toBottomOf="@+id/txtSeguridad2" />
+
+    <TextView
+        android:id="@+id/txtDatos"
+        android:layout_width="237dp"
+        android:layout_height="42dp"
+        android:text="Ingresa los datos de ciudad: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
+
     <EditText
         android:id="@+id/etxCodCiudad"
         android:layout_width="157dp"
         android:layout_height="53dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:hint="112"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/txtCodCiudad"
         app:layout_constraintStart_toEndOf="@+id/txtCodCiudad"
         app:layout_constraintTop_toTopOf="@+id/txtCodCiudad"
-        app:layout_constraintVertical_bias="0.588" />
-
-    <EditText
-        android:id="@+id/etxNombreCiudad"
-        android:layout_width="262dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="44dp"
-        android:ems="10"
-        android:hint="Ejm. Seúl"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/txtNombreCiudad"
-        app:layout_constraintStart_toEndOf="@+id/txtNombreCiudad"
-        app:layout_constraintTop_toTopOf="@+id/txtNombreCiudad" />
-
-    <EditText
-        android:id="@+id/etxSuperficieCiudad"
-        android:layout_width="239dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="24dp"
-        android:ems="10"
-        android:hint="Ejm. 124.00"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/txtSuperCiudad"
-        app:layout_constraintStart_toEndOf="@+id/txtSuperCiudad"
-        app:layout_constraintTop_toTopOf="@+id/txtSuperCiudad"
-        app:layout_constraintVertical_bias="0.461" />
-
-    <EditText
-        android:id="@+id/etxSeguridadCiudad"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="32dp"
-        android:ems="10"
-        android:hint="Ejm: A"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/txtSeguridad"
-        app:layout_constraintStart_toEndOf="@+id/txtSeguridad"
-        app:layout_constraintTop_toTopOf="@+id/txtSeguridad"
-        app:layout_constraintVertical_bias="0.433" />
-
-    <Spinner
-        android:id="@+id/spEsCiudad"
-        android:layout_width="171dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="44dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtEsCapital"
-        app:layout_constraintStart_toEndOf="@+id/txtEsCapital"
-        app:layout_constraintTop_toTopOf="@+id/txtEsCapital"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnGuardarCiudad"
@@ -141,8 +157,68 @@
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.882" />
+
+    <EditText
+        android:id="@+id/etxSeguridadCiudad"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="40dp"
+        android:ems="10"
+        android:hint="Ejm: A"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSeguridad2"
+        app:layout_constraintStart_toEndOf="@+id/txtSeguridad2"
+        app:layout_constraintTop_toTopOf="@+id/txtSeguridad2"
+        app:layout_constraintVertical_bias="0.433" />
+
+    <Spinner
+        android:id="@+id/spEsCiudad"
+        android:layout_width="171dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="68dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEsCapital"
+        app:layout_constraintStart_toEndOf="@+id/txtEsCapital"
+        app:layout_constraintTop_toTopOf="@+id/txtEsCapital"
+        app:layout_constraintVertical_bias="0.437" />
+
+    <TextView
+        android:id="@+id/txtSeguridad2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Nivel de Seguridad: "
+        app:layout_constraintEnd_toEndOf="@+id/txtSuperCiudad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtSuperCiudad"
+        app:layout_constraintTop_toBottomOf="@+id/txtSuperCiudad" />
+
+    <TextView
+        android:id="@+id/txtSuperCiudad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Superficie(km2):"
+        app:layout_constraintEnd_toEndOf="@+id/txtNombreCiudad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtNombreCiudad"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreCiudad" />
+
+    <EditText
+        android:id="@+id/etxSuperficieCiudad"
+        android:layout_width="239dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="Ejm. 124.00"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSuperCiudad"
+        app:layout_constraintStart_toEndOf="@+id/txtSuperCiudad"
+        app:layout_constraintTop_toTopOf="@+id/txtSuperCiudad"
+        app:layout_constraintVertical_bias="0.564" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
