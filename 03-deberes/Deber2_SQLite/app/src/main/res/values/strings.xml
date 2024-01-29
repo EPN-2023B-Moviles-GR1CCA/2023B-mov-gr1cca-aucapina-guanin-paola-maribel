@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExamenIB</string>
+
+    <string-array name="itemsONU">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+</resources>
