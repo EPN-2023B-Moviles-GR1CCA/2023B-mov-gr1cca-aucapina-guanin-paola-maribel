@@ -1,11 +1,12 @@
 package com.example.proyectoinicial
 
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.SupportMapFragment
 
 class GGoogleMapsActivity : AppCompatActivity() {
     private lateinit var mapa: GoogleMap
@@ -13,6 +14,8 @@ class GGoogleMapsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ggoogle_maps)
+        solicitarPermisos()
+        iniciarLogicaMapa()
 
     }//Fin OnCreate
 
@@ -41,4 +44,41 @@ class GGoogleMapsActivity : AppCompatActivity() {
             )
         }
     }
+
+    fun iniciarLogicaMapa() {
+        val fragmentoMapa = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        fragmentoMapa.getMapAsync { googleMap ->
+            // with(X) => if(X != null)
+            with(googleMap) {
+                mapa = googleMap
+                establecerConfiguracionMapa()
+                moverQuicentro()
+                anadirPolilinea()
+                anadirPoligono()
+                escucharListeners()
+            }
+        }
+    }
+
+    fun establecerConfiguracionMapa(){
+        val contexto = this.applicationContext
+        with(mapa) {
+            val permisosFineLocation = ContextCompat
+                .checkSelfPermission(
+                    contexto,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
+            if (tienePermisos) {
+                mapa.isMyLocationEnabled = true //  tenemos permisos
+                uiSettings.isMyLocationButtonEnabled = true
+            }
+            uiSettings.isZoomControlsEnabled = true // Defecto
+        }
+
+    }
+
+
+
 }
