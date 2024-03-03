@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Deber3_Inkiit_RView</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

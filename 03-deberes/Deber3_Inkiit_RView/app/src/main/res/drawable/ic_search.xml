@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_search.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M19.3 17.9C18.3 18.5 17.1 19 16 19C13.2 19 11 16.8 11 14C11 11.2 13.2 9 16 9S21 11.2 21 14C21 15.8 20.2 17.4 19.3 17.9M16 21C17.8 21 19.4 20.2 20.7 18.9L23.6 21.8L24.9 20.5L22 17.6C23.3 16.3 24 14.7 24 13C24 9.7 21.3 7 18 7S12 9.7 12 13C12 16.3 14.7 19 18 19C19.7 19 21.3 18.3 22.6 17.1L24 18.5C22.6 20.5 19.8 21 16 21M16 4C7.2 4 1 10.2 1 18S7.2 32 16 32 31 25.8 31 18 24.8 4 16 4Z"/>
+</vector>

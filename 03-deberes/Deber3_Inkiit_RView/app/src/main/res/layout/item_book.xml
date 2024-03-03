@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewCoverBook"
+            android:layout_width="123dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título del Libro"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textViewAutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Autor"
+                android:textColor="#535252"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Descripción del Libro"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textViewValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Valoración: 4.5"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="130dp"
+                android:layout_height="31dp" />
+
+            <TextView
+                android:id="@+id/textViewEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Estado: Completo"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimary" />
+
+            <!-- Botón "Leer más..." -->
+            <Button
+                android:id="@+id/btnLeerMas"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:text="Leer más..."
+                android:textColor="#FFFFFFFF" />
+
+        </LinearLayout>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
