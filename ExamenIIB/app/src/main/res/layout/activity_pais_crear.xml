@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pais_Crear">
+
+  <TextView
+      android:id="@+id/txt_titulo_pais_ver9"
+      android:layout_width="413dp"
+      android:layout_height="63dp"
+      android:background="@android:color/holo_green_dark"
+      android:paddingTop="10sp"
+      android:paddingBottom="10sp"
+      android:textAlignment="textStart"
+      android:textAllCaps="false"
+      android:textColor="@color/white"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/txt_titulo_pais_ver3"
+      android:layout_width="413dp"
+      android:layout_height="63dp"
+      android:layout_marginBottom="612dp"
+      android:background="@android:color/holo_green_dark"
+      android:paddingTop="10sp"
+      android:paddingBottom="10sp"
+      android:text="     Crear un país"
+      android:textAlignment="textStart"
+      android:textAllCaps="false"
+      android:textColor="@color/white"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/txt_titulo_pais_ver9"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <EditText
+      android:id="@+id/etxCodISO"
+      android:layout_width="157dp"
+      android:layout_height="53dp"
+      android:layout_marginStart="28dp"
+      android:ems="10"
+      android:hint="112"
+      android:inputType="number"
+      app:layout_constraintBottom_toBottomOf="@+id/txtCodISO"
+      app:layout_constraintStart_toEndOf="@+id/txtCodISO"
+      app:layout_constraintTop_toTopOf="@+id/txtCodISO"
+      app:layout_constraintVertical_bias="0.441" />
+
+  <TextView
+      android:id="@+id/txtMiembroONU"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="100dp"
+      android:text="Es miembro de la ONU: "
+      app:layout_constraintEnd_toEndOf="@+id/txtSimDinero"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/txtSimDinero"
+      app:layout_constraintTop_toBottomOf="@+id/txtSimDinero" />
+
+  <TextView
+      android:id="@+id/txtSimDinero"
+      android:layout_width="182dp"
+      android:layout_height="14dp"
+      android:layout_marginTop="48dp"
+      android:text="Simbolo de la moneda local: "
+      app:layout_constraintEnd_toEndOf="@+id/txtPIB"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/txtPIB"
+      app:layout_constraintTop_toBottomOf="@+id/txtPIB" />
+
+  <Button
+      android:id="@+id/btnGuardarPais"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@android:drawable/btn_default"
+      android:text="Guardar"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.891"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.877" />
+
+  <TextView
+      android:id="@+id/txtCodISO"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="44dp"
+      android:text="Código ISO:"
+      app:layout_constraintEnd_toEndOf="@+id/txtDatosPais"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/txtDatosPais"
+      app:layout_constraintTop_toBottomOf="@+id/txtDatosPais" />
+
+  <TextView
+      android:id="@+id/txtPIB"
+      android:layout_width="82dp"
+      android:layout_height="15dp"
+      android:layout_marginTop="72dp"
+      android:text="PIB Nominal:"
+      app:layout_constraintEnd_toEndOf="@+id/txtNomPais"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/txtNomPais"
+      app:layout_constraintTop_toBottomOf="@+id/txtNomPais" />
+
+  <EditText
+      android:id="@+id/etxSimDinero"
+      android:layout_width="155dp"
+      android:layout_height="49dp"
+      android:layout_marginStart="8dp"
+      android:ems="10"
+      android:hint="Ejm: $"
+      android:inputType="text"
+      app:layout_constraintBottom_toBottomOf="@+id/txtSimDinero"
+      app:layout_constraintStart_toEndOf="@+id/txtSimDinero"
+      app:layout_constraintTop_toTopOf="@+id/txtSimDinero"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <Spinner
+      android:id="@+id/spEsONU"
+      android:layout_width="171dp"
+      android:layout_height="51dp"
+      android:layout_marginStart="24dp"
+      app:layout_constraintBottom_toBottomOf="@+id/txtMiembroONU"
+      app:layout_constraintStart_toEndOf="@+id/txtMiembroONU"
+      app:layout_constraintTop_toTopOf="@+id/txtMiembroONU"
+      app:layout_constraintVertical_bias="0.375" />
+
+  <EditText
+      android:id="@+id/etxPIB"
+      android:layout_width="239dp"
+      android:layout_height="58dp"
+      android:layout_marginStart="24dp"
+      android:ems="10"
+      android:hint="Ejm. 124.00"
+      android:inputType="numberDecimal"
+      app:layout_constraintBottom_toBottomOf="@+id/txtPIB"
+      app:layout_constraintStart_toEndOf="@+id/txtPIB"
+      app:layout_constraintTop_toTopOf="@+id/txtPIB"
+      app:layout_constraintVertical_bias="0.41" />
+
+  <TextView
+      android:id="@+id/txtNomPais"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="48dp"
+      android:text="Nombre:"
+      app:layout_constraintEnd_toEndOf="@+id/txtCodISO"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/txtCodISO"
+      app:layout_constraintTop_toBottomOf="@+id/txtCodISO" />
+
+  <TextView
+      android:id="@+id/txtDatosPais"
+      android:layout_width="164dp"
+      android:layout_height="27dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="36dp"
+      android:text="Ingresa los datos del pais: "
+      app:layout_constraintStart_toStartOf="@+id/txt_titulo_pais_ver3"
+      app:layout_constraintTop_toBottomOf="@+id/txt_titulo_pais_ver3" />
+
+  <EditText
+      android:id="@+id/etxNomPais"
+      android:layout_width="262dp"
+      android:layout_height="73dp"
+      android:layout_marginStart="52dp"
+      android:ems="10"
+      android:hint="Ejm. Corea del Sur"
+      android:inputType="text"
+      app:layout_constraintBottom_toBottomOf="@+id/txtNomPais"
+      app:layout_constraintStart_toEndOf="@+id/txtNomPais"
+      app:layout_constraintTop_toTopOf="@+id/txtNomPais"
+      app:layout_constraintVertical_bias="0.388" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

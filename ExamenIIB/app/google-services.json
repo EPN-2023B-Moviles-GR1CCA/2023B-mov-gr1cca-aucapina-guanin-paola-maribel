@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "503599609281",
+    "project_id": "examenib-pmag",
+    "storage_bucket": "examenib-pmag.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503599609281:android:d2c90aea1534049535eb40",
+        "android_client_info": {
+          "package_name": "com.example.examenib"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3UkAysfcAI352lVqpYfvl5pUgSkNVlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
