@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#039182</color>
+    <color name="colorPrimaryDark">#036157</color>
     <color name="bottom_navigation_item_color">#FFFFFFFF</color>
     <color name="colorAccent">#FFFFF000</color>
 

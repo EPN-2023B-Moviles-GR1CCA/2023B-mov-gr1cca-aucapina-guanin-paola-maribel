@@ -1,10 +1,9 @@
-<!-- res/drawable/ic_add.xml -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24.0"
-    android:viewportHeight="24.0">
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-5.52,0 -10,-4.48 -10,-10S6.48,0 12,0s10,4.48 10,10S17.52,20 12,20zM11,6h2v4h4v2h-4v4h-2v-4H7v-2h4V6z"/>
+    android:width="352dp"
+    android:height="448dp"
+    android:viewportWidth="352"
+    android:viewportHeight="448">
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="M352,184v48c0,13.25 -10.75,24 -24,24h-104v104c0,13.25 -10.75,24 -24,24h-48c-13.25,0 -24,-10.75 -24,-24v-104h-104c-13.25,0 -24,-10.75 -24,-24v-48c0,-13.25 10.75,-24 24,-24h104v-104c0,-13.25 10.75,-24 24,-24h48c13.25,0 24,10.75 24,24v104h104c13.25,0 24,10.75 24,24z"/>
 </vector>

@@ -7,7 +7,8 @@
     android:layout_margin="16dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
-    app:cardBackgroundColor="#FFFFFF">
+    app:cardBackgroundColor="#FFFFFF"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,9 @@
             android:id="@+id/imageViewCoverBook"
             android:layout_width="123dp"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+            android:clickable="true"
+            android:paddingStart="20dp"
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,20 +54,43 @@
                 android:text="Descripción del Libro"
                 android:textSize="16sp"
                 android:textColor="@color/black" />
-
             <TextView
-                android:id="@+id/textViewValor"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewValoracion"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Valoración: 4.5"
+                android:text="Valoración:"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="16sp" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                android:layout_width="130dp"
-                android:layout_height="31dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    android:scaleX="0.8"
+                    android:stepSize="0.1" />
+
+                <TextView
+                    android:id="@+id/textViewValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="4.5"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textViewEstado"
@@ -80,13 +106,16 @@
                 android:id="@+id/btnLeerMas"
                 android:layout_width="wrap_content"
                 android:layout_height="29dp"
+                android:layout_gravity="end"
+                android:background="@drawable/btn_leer_mas_bg"
                 android:layout_marginTop="8dp"
-                android:background="@color/colorPrimary"
+                android:layout_marginEnd="16dp"
                 android:text="Leer más..."
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
                 android:textColor="#FFFFFFFF" />
 
         </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

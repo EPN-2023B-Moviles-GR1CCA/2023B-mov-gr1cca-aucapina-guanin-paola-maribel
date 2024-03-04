@@ -17,13 +17,28 @@
 
         <ImageView
             android:id="@+id/imageViewCoverR"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="386dp"
+            android:layout_height="185dp"
             android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="H,16:9"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintDimensionRatio="H,16:9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textViewEstado"
+            android:layout_width="131dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="140dp"
+            android:background="@color/colorPrimary"
+            android:text="Estado: Completo"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewTituloR"
@@ -38,17 +53,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guideline" />
 
-        <TextView
-            android:id="@+id/textViewDescripcionR"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Descripción larga del libro que puede ocupar varias líneas."
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp"
+        <ScrollView
+            android:layout_width="352dp"
+            android:layout_height="68dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTituloR" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewTituloR">
+
+            <TextView
+                android:id="@+id/textViewDescripcionR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Descripción larga del libro que puede ocupar varias líneas."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+        </ScrollView>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
