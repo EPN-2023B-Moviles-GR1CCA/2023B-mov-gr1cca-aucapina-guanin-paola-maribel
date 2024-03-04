@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                 irActividad(ACicloVida::class.java)
             }
 
+
         val botonListView=findViewById<Button>(R.id.btn_ir_list_view)
         botonListView.setOnClickListener{
             irActividad(BListView::class.java)
@@ -115,6 +116,12 @@ class MainActivity : AppCompatActivity() {
         botonGoogleMaps
             .setOnClickListener {
                 irActividad(GGoogleMapsActivity::class.java)
+            }
+
+        val botonFirestore=findViewById<Button>(R.id.btn_intent_firestore)
+        botonFirestore
+            .setOnClickListener {
+                irActividad(IFirestore::class.java)
             }
 
     } // Termina onCreate
