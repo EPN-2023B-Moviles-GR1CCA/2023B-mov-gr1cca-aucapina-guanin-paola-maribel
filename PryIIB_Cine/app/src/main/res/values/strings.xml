@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PryIIB_Cine</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_home">ActivityHome</string>
+    <string name="title_activity_detalles_pelicula">DetallesPeliculaActivity</string>
+    <string name="title_activity_funciones">ActivityFunciones</string>
+
+</resources>

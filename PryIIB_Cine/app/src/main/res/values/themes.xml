@@ -1,0 +1,25 @@
+<!-- res/values/themes.xml -->
+<resources>
+
+    <!-- Definición del estilo de la aplicación -->
+    <style name="Theme.Deber3_Inkiit_RView" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Otros atributos del tema aquí -->
+
+        <!-- Define el estilo de tema para los menús emergentes -->
+        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+    </style>
+
+    <!-- Estilo de tema para los menús emergentes (popups) -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Personaliza el color de fondo de los menús emergentes -->
+        <item name="android:colorBackground">@color/colorPrimary</item>
+
+        <!-- Personaliza el color del texto en los menús emergentes -->
+        <item name="android:textColor">@android:color/white</item>
+
+        <!-- Otros atributos de estilo para los menús emergentes -->
+    </style>
+
+    <style name="Theme.AppCompat.NoActionBar" parent="android:Theme.Material.Light.NoActionBar" />
+
+</resources>

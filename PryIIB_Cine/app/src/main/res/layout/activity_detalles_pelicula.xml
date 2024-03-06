@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetallesPeliculaActivity"
+    android:background="#333333">
+
+    <!-- Agrega más TextView o elementos según sea necesario para mostrar otros detalles -->
+
+    <ImageView
+        android:id="@+id/portadaDetallesImageView"
+        android:layout_width="358dp"
+        android:layout_height="376dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/continuarButton"
+        android:layout_width="214dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="112dp"
+        android:backgroundTint="#FF0000"
+        android:radius="16dp"
+        android:text="Continuar"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directorDetallesTextView" />
+
+    <TextView
+        android:id="@+id/tituloDetallesTextView"
+        android:layout_width="154dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center"
+        android:textColor="@color/bottom_navigation_item_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portadaDetallesImageView" />
+
+    <TextView
+        android:id="@+id/directorDetallesTextView"
+        android:layout_width="141dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/bottom_navigation_item_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloDetallesTextView" />
+
+    <TextView
+        android:id="@+id/sinopsisDetallesTextView"
+        android:layout_width="270dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/bottom_navigation_item_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directorDetallesTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

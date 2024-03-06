@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "726408887829",
+    "project_id": "pryiib-cine",
+    "storage_bucket": "pryiib-cine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726408887829:android:e241a4332f1b430136d81c",
+        "android_client_info": {
+          "package_name": "com.example.pryIIB_cine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAitQuSFX59Rkj5qcPrAB4mbqhQjmfnC3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726408887829:android:71868e723a97d44a36d81c",
+        "android_client_info": {
+          "package_name": "com.example.pryiib_cine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAitQuSFX59Rkj5qcPrAB4mbqhQjmfnC3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

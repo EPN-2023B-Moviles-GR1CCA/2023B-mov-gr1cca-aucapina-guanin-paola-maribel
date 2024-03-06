@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:background="#333333">
+
+    <!-- Título Cine+ -->
+
+    <!-- Barra de búsqueda -->
+    <TextView
+        android:id="@+id/tituloCineTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Cine+"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/buscarEditText"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:hint="Buscar películas"
+        android:minHeight="48dp"
+        android:textColor="@color/bottom_navigation_item_color"
+        android:textColorHint="@color/bottom_navigation_item_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloCineTextView" />
+
+    <!-- Título Recomendaciones -->
+
+    <!-- RecyclerView para mostrar las recomendaciones -->
+
+    <!-- Título Estrenos -->
+
+    <TextView
+        android:id="@+id/tituloRecomendacionesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+
+        android:text="Peliculas disponibles"
+        android:textColor="@color/bottom_navigation_item_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buscarEditText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/peliculasRecyclerView"
+        android:layout_width="378dp"
+        android:layout_height="569dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloRecomendacionesTextView" />
+
+    <!-- RecyclerView para mostrar los estrenos -->
+
+    <!-- Barra de navegación -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

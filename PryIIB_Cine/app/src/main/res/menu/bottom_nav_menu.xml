@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/inicio"
+        android:title="Inicio"
+        android:icon="@drawable/heart_o"/>
+    <item
+        android:id="@+id/peliculas"
+        android:title="Peliculas"
+        android:icon="@drawable/heart_o"/>
+    <item
+        android:id="@+id/mis_tickets"
+        android:title="Mis Tickets"
+        android:icon="@drawable/heart_o"/>
+    <item
+        android:id="@+id/perfil"
+        android:title="Perfil"
+        android:icon="@drawable/heart_o"/>
+</menu>
